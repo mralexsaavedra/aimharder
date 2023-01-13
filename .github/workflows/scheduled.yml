@@ -1,0 +1,16 @@
+name: Scheduled FitBot run
+
+on:
+  schedule:
+    - cron: "40 14 * * *"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+      # - name: Build docker image
+      #   run: make docker/build
+      - name: Run fitbot
+        run: docker run -e email=${{ secrets.EMAIL }} -e password=${{ secrets.PASSWORD }} -e booking-goals={'\"6\":{\"time\":\"1000_60\"\,\"name\":\"WOD\"}'} -e box-name=crossfitbarakaldo -e box-id=9856 -e days-in-advance=2 pablobuenaposada/fitbot
