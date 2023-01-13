@@ -13,4 +13,4 @@ jobs:
       # - name: Build docker image
       #   run: make docker/build
       - name: Run fitbot
-        run: docker run -e email=${{ secrets.EMAIL }} -e password=${{ secrets.PASSWORD }} -e booking-goals={'\"6\":{\"time\":\"1000_60\"\,\"name\":\"WOD\"}'} -e box-name=crossfitbarakaldo -e box-id=9856 -e days-in-advance=2 pablobuenaposada/fitbot
+        run: docker run -e email=${{ secrets.EMAIL }} -e password=${{ secrets.PASSWORD }} -e booking-goals={'\"0\":{\"time\":\"1800_60\"\,\"name\":\"WOD\"}\,\"1\":{\"time\":\"1800_60\"\,\"name\":\"WOD\"},\"2\":{\"time\":\"1800_60\"\,\"name\":\"WOD\"},\"3\":{\"time\":\"1800_60\"\,\"name\":\"WOD\"},\"4\":{\"time\":\"0800_60\"\,\"name\":\"WOD\"},\"6\":{\"time\":\"1000_60\"\,\"name\":\"WOD\"}'} -e box-name=crossfitbarakaldo -e box-id=9856 -e days-in-advance=2 pablobuenaposada/fitbot
