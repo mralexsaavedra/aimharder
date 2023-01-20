@@ -2,7 +2,7 @@ name: Scheduled FitBot run
 
 on:
   schedule:
-    - cron: "50 6 * * *"
+    - cron: "55 6 * * *"
 
 jobs:
   run:
@@ -13,4 +13,4 @@ jobs:
       # - name: Build docker image
       #   run: make docker/build
       - name: Run fitbot
-        run: docker run -e email=${{ secrets.EMAIL }} -e password=${{ secrets.PASSWORD }} -e booking-goals={'\"0\":{\"time\":\"1800_60\"\,\"name\":\"WOD\"}\,\"1\":{\"time\":\"1800_60\"\,\"name\":\"WOD\"},\"2\":{\"time\":\"1800_60\"\,\"name\":\"WOD\"},\"3\":{\"time\":\"1900_60\"\,\"name\":\"WOD\"},\"4\":{\"time\":\"0800_60\"\,\"name\":\"WOD\"}'} -e box-name=${{ secrets.BOX_NAME }} -e box-id=${{ secrets.BOX_ID }} -e days-in-advance=4 pablobuenaposada/fitbot
+        run: docker run -e email=${{ secrets.EMAIL }} -e password=${{ secrets.PASSWORD }} -e booking-goals={'\"0\":{\"time\":\"1800_60\"\,\"name\":\"WOD\"}\,\"1\":{\"time\":\"1800_60\"\,\"name\":\"WOD\"},\"2\":{\"time\":\"1700_60\"\,\"name\":\"WOD\"},\"3\":{\"time\":\"1900_60\"\,\"name\":\"WOD\"},\"4\":{\"time\":\"1700_60\"\,\"name\":\"WOD\"}'} -e box-name=${{ secrets.BOX_NAME }} -e box-id=${{ secrets.BOX_ID }} -e days-in-advance=4 pablobuenaposada/fitbot
