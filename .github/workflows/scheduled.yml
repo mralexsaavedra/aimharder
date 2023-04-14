@@ -2,7 +2,7 @@ name: Scheduled FitBot run
 
 on:
   schedule:
-    - cron: "57 6 * * *"
+    - cron: "57 5 * * *"
 
 jobs:
   run:
@@ -13,6 +13,6 @@ jobs:
       # - name: Build docker image
       #   run: make docker/build
       - name: Run fitbot (OPEN BOX)
-        run: docker run -e email=${{ secrets.EMAIL }} -e password=${{ secrets.PASSWORD }} -e booking-goals={'\"0\":{\"time\":\"1800_60\"\,\"name\":\"OPEN\ BOX\"}\,\"1\":{\"time\":\"1800_60\"\,\"name\":\"OPEN\ BOX\"},\"2\":{\"time\":\"1700_60\"\,\"name\":\"OPEN\ BOX\"},\"3\":{\"time\":\"1800_60\"\,\"name\":\"OPEN\ BOX\"},\"4\":{\"time\":\"1600_60\"\,\"name\":\"OPEN\ BOX\"}'} -e box-name=${{ secrets.BOX_NAME }} -e box-id=${{ secrets.BOX_ID }} -e days-in-advance=4 pablobuenaposada/fitbot
+        run: docker run -e email=${{ secrets.EMAIL }} -e password=${{ secrets.PASSWORD }} -e booking-goals={'\"0\":{\"time\":\"1800_60\"\,\"name\":\"OPEN\ BOX\"}\,\"1\":{\"time\":\"1700_60\"\,\"name\":\"OPEN\ BOX\"},\"2\":{\"time\":\"1800_60\"\,\"name\":\"OPEN\ BOX\"},\"3\":{\"time\":\"1800_60\"\,\"name\":\"OPEN\ BOX\"},\"4\":{\"time\":\"1800_60\"\,\"name\":\"OPEN\ BOX\"}'} -e box-name=${{ secrets.BOX_NAME }} -e box-id=${{ secrets.BOX_ID }} -e days-in-advance=4 pablobuenaposada/fitbot
       - name: Run fitbot (WOD)
-        run: docker run -e email=${{ secrets.EMAIL }} -e password=${{ secrets.PASSWORD }} -e booking-goals={'\"0\":{\"time\":\"1900_60\"\,\"name\":\"OPEN\ BOX\"}\,\"1\":{\"time\":\"1900_60\"\,\"name\":\"OPEN\ BOX\"},\"2\":{\"time\":\"1700_60\"\,\"name\":\"OPEN\ BOX\"},\"3\":{\"time\":\"1900_60\"\,\"name\":\"OPEN\ BOX\"},\"4\":{\"time\":\"1700_60\"\,\"name\":\"OPEN\ BOX\"}'} -e box-name=${{ secrets.BOX_NAME }} -e box-id=${{ secrets.BOX_ID }} -e days-in-advance=4 pablobuenaposada/fitbot
+        run: docker run -e email=${{ secrets.EMAIL }} -e password=${{ secrets.PASSWORD }} -e booking-goals={'\"0\":{\"time\":\"1900_60\"\,\"name\":\"OPEN\ BOX\"}\,\"1\":{\"time\":\"1700_60\"\,\"name\":\"OPEN\ BOX\"},\"2\":{\"time\":\"1900_60\"\,\"name\":\"OPEN\ BOX\"},\"3\":{\"time\":\"1900_60\"\,\"name\":\"OPEN\ BOX\"},\"4\":{\"time\":\"1900_60\"\,\"name\":\"OPEN\ BOX\"}'} -e box-name=${{ secrets.BOX_NAME }} -e box-id=${{ secrets.BOX_ID }} -e days-in-advance=4 pablobuenaposada/fitbot
